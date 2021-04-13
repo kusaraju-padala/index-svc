@@ -1,0 +1,377 @@
+<html>
+
+<head>
+	<style>
+		.mouth {
+			position: relative;
+			bottom: 5%;
+			width: 25px;
+			height: 36px;
+			border: solid 3px #000;
+			border-color: Transparent Transparent black Transparent;
+			border-radius: 0% 0% 50% 50%;
+		}
+
+		.mouth1 {
+			border-color: black transparent transparent transparent;
+			border-radius: 50% 50% 0px 0px;
+			top: 28px;
+		}
+
+		.mouth2 {
+			border-color: black transparent transparent transparent;
+			border-radius: 40% 40% 0px 0px;
+			top: 28px;
+		}
+
+		.mouth3 {
+			position: relative;
+			top: 63%;
+			width: 20px;
+			border-bottom: solid 3px #000;
+		}
+
+		.mouth4 {
+			bottom: 5px;
+			border-color: transparent transparent black transparent;
+			border-radius: 0% 0% 40% 40%;
+		}
+
+		.face {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border: 2px solid black;
+		}
+
+		.eyes {
+			position: relative;
+			top: 35%;
+			width: 50px;
+			display: flex;
+			justify-content: space-around;
+		}
+
+		.eye {
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background-color: black;
+		}
+
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+
+		.form {
+			margin-left: 30%
+		}
+
+		.radio {
+			display: flex;
+		}
+
+		.radio input {
+			display: none;
+		}
+
+		label {
+			margin: 20px 20px 0px 0px;
+			cursor: pointer;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+
+		.name input {
+			width: 200px;
+			outline: none;
+		}
+
+		p {
+			margin-bottom: 10px;
+		}
+
+		button {
+			margin-top: 20px;
+			background-color: #f44336;
+			color: white;
+			border: none;
+			width: 80px;
+			height: 20px;
+			border-radius: 3px;
+		}
+
+		#snackbar {
+			visibility: hidden;
+			text-align: center;
+			background-color: grey;
+			color: white;
+			width: 250px;
+			height: 40px;
+			padding-top: 15px;
+			position: fixed;
+			bottom: 50px;
+			left: 40%;
+			border-radius: 10px;
+		}
+
+		#snackbar.show {
+			visibility: visible;
+			-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+			animation: fadein 0.5s, fadeout 0.5s 2.5s;
+		}
+
+		@media screen and (max-width: 1000px) {
+			.form {
+				margin-left: 5%;
+				margin-top: 5%;
+			}
+
+			#snackbar {
+				width: 600px;
+				height: 80px;
+				left: 20%;
+				bottom: 150px;
+				padding-top: 30px;
+				border-radius: 30px;
+			}
+
+			body {
+				font-size: 40px;
+			}
+
+			.name input {
+				height: 80px;
+				width: 90vw;
+				border: 1px solid black;
+				font-size: 40px;
+				margin-bottom: 20px;
+				padding: 10px;
+				border-radius: 15px;
+
+			}
+
+			.comment textarea {
+				width: 90vw;
+				font-size: 40px;
+				border: 1px solid black;
+				padding: 10px;
+				border-radius: 15px;
+				outline: none;
+			}
+
+			.radio {
+				margin: 20px 0px 30px 0px;
+			}
+
+			.face {
+				width: 150px;
+				height: 150px;
+				border: 3px solid black;
+			}
+
+			.eyes {
+				width: 100px;
+			}
+
+			.eye {
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				background-color: black;
+			}
+
+			.mouth {
+				position: relative;
+				top: 10px;
+				width: 60px;
+				height: 90px;
+				border: solid 4px #000;
+				border-color: Transparent Transparent black Transparent;
+				border-radius: 0% 0% 50% 50%;
+			}
+
+			.mouth1 {
+				border-color: black transparent transparent transparent;
+				border-radius: 50% 50% 0px 0px;
+				top: 85px;
+			}
+
+			.mouth2 {
+				border-color: black transparent transparent transparent;
+				border-radius: 40% 40% 0px 0px;
+				top: 88px;
+			}
+
+			.mouth3 {
+				width: 45px;
+				border-bottom: solid 4px #000;
+			}
+
+			.mouth4 {
+				border-color: transparent transparent black transparent;
+				border-radius: 0% 0% 40% 40%;
+			}
+
+			button {
+				font-size: 40px;
+				width: 90vw;
+				height: 80px;
+				margin-top: 40px;
+				border-radius: 15px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="form">
+		<div class="name">
+			<p>Name</p>
+			<input type="text" id="name" placeholder="Name">
+		</div>
+		<div class="radio">
+		
+		<input type="radio" id="five" name="rating" value="5">
+			<label for="five">
+				<div class="face face5" id="face5">
+					<div class="eyes">
+						<div class="eye left"></div>
+						<div class="eye right"></div>
+					</div>
+					<div class="mouth mouth5"></div>
+				</div>
+			</label>
+			<input type="radio" id="four" name="rating" value="4">
+			<label for="four">
+				<div class="face face4" id="face4">
+					<div class="eyes">
+						<div class="eye left"></div>
+						<div class="eye right"></div>
+					</div>
+					<div class="mouth mouth4"></div>
+				</div>
+			</label>
+			<input type="radio" id="three" name="rating" value="3">
+			<label for="three">
+				<div class="face face3" id="face3">
+					<div class="eyes">
+						<div class="eye left"></div>
+						<div class="eye right"></div>
+					</div>
+					<div class=" mouth3"></div>
+				</div>
+			</label>
+			<input type="radio" id="two" name="rating" value="2">
+			<label for="two">
+				<div class="face face2" id="face2">
+					<div class="eyes">
+						<div class="eye left"></div>
+						<div class="eye right"></div>
+					</div>
+					<div class="mouth mouth2"></div>
+				</div>
+			</label>
+			<input type="radio" id="one" name="rating" value="1">
+			<label for="one">
+				<div class="face face1" id="face1">
+					<div class="eyes">
+						<div class="eye left"></div>
+						<div class="eye right"></div>
+					</div>
+					<div class="mouth mouth1"></div>
+				</div>
+			</label>
+			
+			
+			
+			
+		</div>
+		<div class="comment">
+			<p>Comment</p>
+			<textarea placeholder="Comment" name="comment" id="comment" cols="30" rows="10"></textarea>
+		</div>
+		<button id="submit">Submit</button>
+	</div>
+	<div id="snackbar">Thanks for the feedback</div>
+	<script>
+		var star1 = document.getElementById('one');
+		var star2 = document.getElementById('two');
+		var star3 = document.getElementById('three');
+		var star4 = document.getElementById('four');
+		var star5 = document.getElementById('five');
+		var submit = document.getElementById('submit');
+		var name = '';
+		var rating = 0;
+		var comment = '';
+		star1.onclick = function () {
+			if (rating != 0) {
+				document.getElementById('face' + rating).style.backgroundColor = 'white'
+			}
+			document.getElementById('face1').style.backgroundColor = 'red';
+			rating = 1;
+		}
+		star2.onclick = function () {
+			if (rating != 0) {
+				document.getElementById('face' + rating).style.backgroundColor = 'white'
+			}
+			face2.style.backgroundColor = 'orange';
+			rating = 2;
+		}
+		star3.onclick = function () {
+			if (rating != 0) {
+				document.getElementById('face' + rating).style.backgroundColor = 'white'
+			}
+			face3.style.backgroundColor = 'yellow';
+			rating = 3;
+		}
+		star4.onclick = function () {
+			if (rating != 0) {
+				document.getElementById('face' + rating).style.backgroundColor = 'white'
+			}
+			face4.style.backgroundColor = 'greenyellow';
+			rating = 4;
+		}
+		star5.onclick = function () {
+			if (rating != 0) {
+				document.getElementById('face' + rating).style.backgroundColor = 'white'
+			}
+			face5.style.backgroundColor = 'green';
+			rating = 5;
+		}
+		submit.onclick = async function () {
+			name = document.getElementById('name').value;
+			comment = document.getElementById('comment').value;
+			document.getElementById('name').value = '';
+			document.getElementById('comment').value = '';
+			if (rating != 0 || comment != '') {
+				var x = document.getElementById("snackbar");
+				x.className = "show";
+				setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+			}
+			document.getElementById('face' + rating).style.backgroundColor = 'white';
+
+
+			/*request starts here*/
+			const body = new FormData
+			body.append("score", rating)
+			body.append("feedback", comment)
+
+			let res = await fetch("https://www.jusenews.com/juse/user/feedback", {
+			method: "POST",
+				body:body,
+				headers: {
+					Authorization: "Bearer eyJhbGciOiJIUzM4NCJ9.eyJpZCI6MzAsImV4cCI6MTYzMDQxMTc1M30.vRkKQ1FQ1BTbexx9pz--poXrMRPVxWRydYXCV1zF0CaAdkQL66ITQ23sGEQnUebY"
+				}
+				
+			})
+			console.log(res);
+
+			rating = 0;
+		}
+	</script>
+</body>
+
+</html>
